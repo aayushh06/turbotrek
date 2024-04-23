@@ -10,6 +10,7 @@ import { Models } from "appwrite";
 import { getCategories } from "@/lib/appwrite";
 import { cn } from "@/lib/utils";
 import ProductPagination from "./productPagination";
+import Image from "next/image";
 
 export function ProductsListing({
   products,
@@ -149,7 +150,7 @@ function SingleProduct({ product }: { product: Product }) {
     <Link href={`/products/${product.$id}`}>
       <Card>
         <div className="relative overflow-hidden rounded-t-lg">
-          <img
+          <Image
             alt="Product image"
             className="object-cover aspect-none"
             height="500"
@@ -159,8 +160,8 @@ function SingleProduct({ product }: { product: Product }) {
         </div>
         <CardContent className="p-4">
           <h3 className="font-semibold line-clamp-2">{product.title}</h3>
-          <p className="font-bold inline mr-2">${product.discountedPrice}</p>
-          <p className="inline text-xs font-thin line-through">${product.price}</p>
+          <p className="font-bold inline mr-2">₹ {product.discountedPrice}</p>
+          <p className="inline text-xs font-thin line-through">₹ {product.price}</p>
         </CardContent>
       </Card>
     </Link>

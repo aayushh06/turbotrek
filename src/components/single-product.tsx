@@ -41,8 +41,8 @@ export function SingleProduct({
             </div>
           </div>
           <div className="text-4xl flex flex-row gap-x-2 items-end font-bold">
-            <p>${product.discountedPrice}</p>
-            <p className="line-through text-xl font-thin">${product.price}</p>
+            <p>₹{product.discountedPrice}</p>
+            <p className="line-through text-xl font-thin">₹{product.price}</p>
           </div>
         </div>
         <div className="grid gap-4">
@@ -72,7 +72,7 @@ export function SingleProduct({
                     }
                   `}
               >
-                <img
+                <Image
                   alt="Preview thumbnail"
                   className="aspect-square object-cover"
                   height={100}
@@ -96,9 +96,9 @@ export function SingleProduct({
                 <p>{product.description}</p>
               </div>
               <div className="text-4xl flex flex-row gap-x-2 items-end font-bold">
-                <p>${product.discountedPrice}</p>
+                <p>₹{product.discountedPrice}</p>
                 <p className="line-through text-xl font-thin">
-                  ${product.price}
+                  ₹{product.price}
                 </p>
               </div>
             </div>
