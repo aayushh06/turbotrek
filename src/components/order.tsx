@@ -27,7 +27,7 @@ function SingleOrder({ order }: { order: any }) {
         <Badge color="success" className="self-end">
           <Link href="/orders/3210">Shipped</Link>
         </Badge>
-        <p className="font-bold text-3xl">{order.totalPrice}</p>
+        <p className="font-bold text-3xl">₹ {order.totalPrice}</p>
       </CardFooter>
     </Card>
   );
