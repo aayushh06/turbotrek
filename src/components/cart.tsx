@@ -12,6 +12,7 @@ import { getCartItems, getProductById } from "@/lib/appwrite";
 import { currentUser } from "@clerk/nextjs";
 import { getImageUrls } from "@/lib/cloudinary";
 import Checkout from "./Checkout";
+import Image from "next/image";
 
 export async function Cart() {
   const user = await currentUser();
@@ -53,7 +54,7 @@ export async function Cart() {
               className="flex items-center gap-4 p-4 border-t border-gray-200 dark:border-gray-800"
             >
               <div className="flex items-center gap-4">
-                <img
+                <Image
                   alt="Thumbnail"
                   className="aspect-square rounded-lg object-cover"
                   height="100"
@@ -67,7 +68,7 @@ export async function Cart() {
                   >
                     {product?.title}
                   </Link>
-                  <div className="text-sm">${product?.discountedPrice}</div>
+                  <div className="text-sm">₹ {product?.discountedPrice}</div>
                 </div>
               </div>
               <div className="ml-auto flex items-center gap-4">
@@ -88,14 +89,14 @@ export async function Cart() {
         </div>
         <form className="grid gap-2 ml-auto text-right">
           <div>
-            $
+            ₹ 
             {products.reduce((acc, { product }) => {
               return acc + product?.discountedPrice;
             }, 0)}
           </div>
-          <div>$500.00</div>
+          <div>₹ 500.00</div>
           <div className="font-semibold">
-            $
+            ₹ 
             {products.reduce((acc, { product }) => {
               return acc + product?.discountedPrice;
             }, 500)}
