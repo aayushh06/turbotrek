@@ -54,12 +54,12 @@ export default function Success() {
             <div className="font-medium">Date & Time</div>
             <DateTimeDisplay />
           </div>
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             <div className="font-medium">Shipping address</div>
             <div className="ml-auto">
               1234 Main St. Anytown, CA 12345, United States
             </div>
-          </div>
+          </div> */}
         </CardContent>
         <CardFooter>
           <Button className="w-full"><Link href={'/orders'}>Go to orders</Link></Button>
