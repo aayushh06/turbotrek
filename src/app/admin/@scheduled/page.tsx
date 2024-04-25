@@ -20,6 +20,7 @@ export default async function ScheduledPage() {
           <TableHead>Name</TableHead>
           <TableHead>Email</TableHead>
           <TableHead>Phone</TableHead>
+          <TableHead>No of cars</TableHead>
           <TableHead>Date</TableHead>
           <TableHead>Created at</TableHead>
         </TableRow>
@@ -30,6 +31,8 @@ export default async function ScheduledPage() {
             <TableCell>{drive.name}</TableCell>
             <TableCell>{drive.email}</TableCell>
             <TableCell>{drive.phone}</TableCell>
+            <TableCell>{drive.no_of_cars}</TableCell>
+
             <TableCell>{new Date(drive.date).toLocaleDateString()}
               <small className="block">
                 {new Date(drive.date).toLocaleTimeString()}
