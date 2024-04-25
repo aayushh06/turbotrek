@@ -68,6 +68,7 @@ export async function Cart() {
                   >
                     {product?.title}
                   </Link>
+                  <div className="text-sm text-gray-400">{product?.description}</div>
                   <div className="text-sm">₹ {product?.discountedPrice}</div>
                 </div>
               </div>
