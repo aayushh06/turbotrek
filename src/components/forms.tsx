@@ -215,6 +215,12 @@ export function ScheduleTestDrive() {
             />
             <Input
               required
+              placeholder="How many cars are you interested in?"
+              type="number"
+              name="no_of_cars"
+            />
+            <Input
+              required
               min={new Date().toISOString().slice(0, 16)}
               placeholder="Enter your preferred date"
               type="datetime-local"
