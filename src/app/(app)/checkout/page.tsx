@@ -122,7 +122,7 @@ export default function Checkout() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="number2">Card number</Label>
-            <Input id="number2" name="number2" placeholder="Enter your email" type="number" required/>
+            <Input id="number2" name="number2" placeholder="Enter your Card number" type="number" required/>
           </div>
           <div className="grid grid-cols-3 gap-4">
             <div className="space-y-2">
