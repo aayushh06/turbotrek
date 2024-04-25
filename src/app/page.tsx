@@ -2,9 +2,7 @@ import Navbar from "@/components/Navbar";
 import { ChevronRightIcon, Star, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  AlertDialog, AlertDialogTrigger
-} from "@/components/ui/alert-dialog";
+import { AlertDialog, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { ScheduleTestDrive } from "@/components/forms";
 
