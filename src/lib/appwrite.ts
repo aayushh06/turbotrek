@@ -174,6 +174,22 @@ export const getCartItems = async (userId: string) => {
   return cart[0].products;
 };
 
+// remove an item from the cart
+export const removeItemFromCart = async (productId: string, userId: string) => {
+  if (!userId) return null;
+  const cart = await getCart(userId);
+  if (cart.length === 0) return null;
+  const response = await databases.updateDocument(
+    process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID as string,
+    process.env.APPWRITE_COLLECTION_CART_ID || "carts",
+    cart[0].$id,
+    {
+      products: cart[0].products.filter((id: string) => id !== productId),
+    }
+  );
+  return response;
+};
+
 export const clearCart = async (userId: string) => {
   if (!userId) return null;
   const cart = await getCart(userId);
