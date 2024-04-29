@@ -8,11 +8,12 @@ import {
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { TrashIcon } from "lucide-react";
-import { getCartItems, getProductById } from "@/lib/appwrite";
+import { getCartItems, getProductById, removeItemFromCart } from "@/lib/appwrite";
 import { currentUser } from "@clerk/nextjs";
 import { getImageUrls } from "@/lib/cloudinary";
 import Checkout from "./Checkout";
 import Image from "next/image";
+import DeleteFromCart from "./deleteFromCart";
 
 export async function Cart() {
   const user = await currentUser();
@@ -55,7 +56,7 @@ export async function Cart() {
             >
               <div className="flex items-center gap-4">
                 <Image
-                  alt="Thumbnail"
+                  alt={product?.title}
                   className="aspect-square rounded-lg object-cover"
                   height="100"
                   src={images[0]}
@@ -73,10 +74,8 @@ export async function Cart() {
                 </div>
               </div>
               <div className="ml-auto flex items-center gap-4">
-                <Button size="icon" variant="outline">
-                  <TrashIcon className="h-4 w-4" />
-                  <span className="sr-only">Delete</span>
-                </Button>
+                <DeleteFromCart productId={product?.$id!} 
+                />
               </div>
             </div>
           ))}
